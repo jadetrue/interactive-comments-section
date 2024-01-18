@@ -12,10 +12,10 @@ const VoteForComment = () => {
     }
 
   return (
-    <div>
-    <button onClick={() => increase()}>+</button>
-    <p>{count}</p>
-    <button onClick={() => decrease()}>-</button>
+    <div className='vote-for-comment'>
+      <button className='vote-for-comment__btn btn__reset' onClick={() => increase()}>+</button>
+        <p className='clr__primary'>{count}</p>
+      <button className='vote-for-comment__btn btn__reset' onClick={() => decrease()}>-</button>
     </div>
   )
 }
