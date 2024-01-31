@@ -1,6 +1,6 @@
 import './App.css'
+import CommentLayout from './components/CommentLayout'
 // import data from './assets/data'
-import InteractiveComment from './components/InteractiveComment'
 
 function App() {
 
@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-      <InteractiveComment />
+    <CommentLayout/>
     </>
   )
 }

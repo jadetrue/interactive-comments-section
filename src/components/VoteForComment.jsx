@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import { Button } from './Button';
 
 const VoteForComment = () => {
     const [count, setCount] = useState(0)
@@ -13,9 +14,9 @@ const VoteForComment = () => {
 
   return (
     <div className='vote-for-comment'>
-      <button className='vote-for-comment__btn btn__reset' onClick={() => increase()}>+</button>
+      <Button className='btn btn__reset' name="+" type="neutral" onClick={() => increase()}/>
         <p className='clr__primary'>{count}</p>
-      <button className='vote-for-comment__btn btn__reset' onClick={() => decrease()}>-</button>
+      <Button className='btn btn__reset' name="-" type="neutral" onClick={() => decrease()}/>
     </div>
   )
 }

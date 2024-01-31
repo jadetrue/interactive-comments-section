@@ -68,15 +68,51 @@ p, h1, h2, h3, h4, h5, h6 {
 
 body { 
   font-family: var(--ff-primary);
+  background-color: var(--clr-neutral-300);
 }
-
-.btn__reset { 
-  background: none;
-  border:none;
-  cursor: pointer;
-}
-
 
 .clr__primary {
   color: var(--clr-primary-400);
+}
+
+.interactive-comment {
+  background-color: var(--clr-neutral-100);
+  border-radius: 1rem;
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 3rem auto;
+  justify-content: start;
+  align-items: center;
+}
+
+.vote-for-comment {
+  background-color: var(--clr-neutral-200);
+  width: fit-content;
+  border-radius: 1rem;
+}
+
+.btn {
+    padding: 1rem;
+    font-weight: var(--fw-medium);
+    text-align: center;
+
+    &.btn__reset { 
+      background: transparent;
+      border:none;
+      cursor: pointer;
+    }
+
+    &.button--state-success,
+    &.button--state-default {
+      color: var(--clr-primary-400);
+    }
+
+    &.button--state-neutral {
+      color: var(--clr-neutral-400);
+    }
+
+    &.button--state-danger {
+      color: var(--clr-secondary-500);
+    }
 }
