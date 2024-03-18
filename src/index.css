@@ -118,6 +118,19 @@ body {
   }
 }
 
+.new-comment-container {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  background-color: var(--clr-neutral-100);
+  border-radius: 0.5rem;
+  padding: 1rem;
+
+  @media screen and (min-width: 1021px) {
+    flex-direction: row;
+  }
+}
+
 #comment {
   text-align: left;
   color: var(--clr-neutral-400);
@@ -173,4 +186,13 @@ body {
 
 .text-medium {
   font-weight: var(--fw-medium);
+}
+
+textarea {
+  width: 100%;
+  border-radius: 0.3rem;
+  padding: 0.75rem;
+  color: var(--clr-neutral-400);
+  font-weight: var(--fw-regular);
+  border-color: var(--clr-neutral-300);
 }
