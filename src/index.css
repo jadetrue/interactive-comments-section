@@ -75,21 +75,25 @@ body {
   color: var(--clr-primary-400);
 }
 
-.interactive-comment {
-  background-color: var(--clr-neutral-100);
-  border-radius: 1rem;
-  padding: 1rem;
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 3rem auto;
-  justify-content: start;
-  align-items: center;
-}
-
 .vote-for-comment {
   background-color: var(--clr-neutral-200);
   width: fit-content;
+  border-radius: .5rem;
+}
+
+.comment-container {
+  display:flex;
+  gap: 1rem;
+  flex-direction: row;
+  background-color: var(--clr-neutral-100);
   border-radius: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.author-container {
+  display: flex;
+  justify-content: start;
 }
 
 .btn {
@@ -115,4 +119,8 @@ body {
     &.button--state-danger {
       color: var(--clr-secondary-500);
     }
+}
+
+.body {
+  font-weight: var(--fw-bold);
 }
