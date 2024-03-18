@@ -15,7 +15,7 @@ const VoteForComment = () => {
   return (
     <div className="vote-for-comment">
       <Button name="+" type="neutral" onClick={() => increase()} />
-      <p className="clr__primary">{count}</p>
+      <p className="clr__primary text-medium">{count}</p>
       <Button name="-" type="neutral" onClick={() => decrease()} />
     </div>
   );
