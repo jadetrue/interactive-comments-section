@@ -1,16 +1,14 @@
-import './App.css'
-import CommentLayout from './components/CommentLayout'
-// import data from './assets/data'
+import "./App.css";
+import CommentLayout from "./components/CommentLayout";
+import data from "./assets/data";
 
 function App() {
-
-  // const currentUser = data.currentUser
-
+  console.log(data);
   return (
     <>
-    <CommentLayout/>
+      <CommentLayout key="" data={data} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
