@@ -14,16 +14,16 @@ export const Button: React.FC<ButtonProps> = ({
   const buttonState = (type) => {
     switch (type) {
       case "danger": {
-        return "button--state-danger";
+        return "btn--state-danger";
       }
       case "success": {
-        return "button--state-success";
+        return "btn--state-success";
       }
       case "neutral": {
-        return "button--state-neutral";
+        return "btn--state-neutral";
       }
       default: {
-        return "button--state-default";
+        return "btn--state-default";
       }
     }
   };

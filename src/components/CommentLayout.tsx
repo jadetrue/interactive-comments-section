@@ -34,8 +34,7 @@ const CommentLayout: React.FC<CommentLayoutProps> = ({ data }) => {
       {data.comments.map((item) => {
         return (
           <>
-            <div className="comment-container">
-              <VoteForComment />
+            <div className="container">
               <div>
                 <Author
                   authorImg={item.user.image.png}
@@ -44,6 +43,7 @@ const CommentLayout: React.FC<CommentLayoutProps> = ({ data }) => {
                 />
                 <Comment comment={item.content} />
               </div>
+              <VoteForComment />
             </div>
           </>
         );
