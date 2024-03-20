@@ -25,18 +25,22 @@ export const Replies: React.FC<RepliesProps> = ({ replies }) => {
   return (
     <>
       {replies.map((reply) => {
-        return <div className="container" key={reply.id}>
-          <div className="comment">
-            <Author
-              authorImg={reply.user.image.png}
-              authorName={reply.user.username}
-              dateTime={reply.createdAt}
-            />
-            <p className="">{reply.content}</p>
-          </div>
-          <VoteForComment votes={reply.score} />
 
-        </div>;
+        return (
+          <div className="border">
+            <div className="container" key={reply.id}>
+              <div className="comment">
+                <Author
+                  authorImg={reply.user.image.png}
+                  authorName={reply.user.username}
+                  dateTime={reply.createdAt}
+                />
+                <p className="">{reply.content}</p>
+              </div>
+              <VoteForComment votes={reply.score} />
+            </div>
+          </div>
+        )
       })}
     </>
   );

@@ -61,7 +61,9 @@ const CommentLayout: React.FC<CommentLayoutProps> = ({ data }) => {
               <VoteForComment votes={item.score} />
             </div>
             {/* add condition to render this to relevant comment reply using reply to and name */}
-            <Replies replies={item.replies}></Replies>
+            <div className="reply-container">
+              <Replies replies={item.replies}></Replies>
+            </div>
           </>
         );
       })}

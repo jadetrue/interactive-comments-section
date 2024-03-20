@@ -1,12 +1,18 @@
 import React from "react";
 
-export const Author = ({ authorName, authorImg, dateTime }) => {
+interface AuthorProps {
+  authorName?: string;
+  authorImg: string;
+  dateTime?: string;
+}
+
+export const Author: React.FC<AuthorProps> = ({ authorName, authorImg, dateTime }) => {
   return (
     <div className="author-container">
-      <img width="30" height="30" src={authorImg} />
+      <img width="50" height="50" src={authorImg} />
       <p className="text-medium">{authorName}</p>
-      <p className="text-clr-neutral">{dateTime}</p>
       {/* if author name matches user add tag for "YOU" */}
+      <p className="text-clr-neutral">{dateTime}</p>
     </div>
   );
 };
