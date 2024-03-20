@@ -3,6 +3,7 @@ import VoteForComment from "./VoteForComment";
 import { Author } from "./Author";
 import Comment from "./Comment";
 import { AddNewComment } from "./AddNewComment";
+import { Replies } from './Replies';
 
 interface CommentLayoutProps {
   data: {
@@ -14,9 +15,22 @@ interface CommentLayoutProps {
         };
         createdAt: string;
         content: string;
-        replies: [{}];
-      }
-    ];
+        score: number;
+        replies: [{
+          id: number; content: string;
+          createdAt: string;
+          score: number;
+          replyingTo: string;
+          user: {
+            image: {
+              png: string;
+              webp: string;
+            },
+            username: string;
+          },
+        }
+        ]
+      }],
     currentUser: {
       image: { png: string };
     };
@@ -32,6 +46,7 @@ const CommentLayout: React.FC<CommentLayoutProps> = ({ data }) => {
   return (
     <>
       {data.comments.map((item) => {
+        console.log(item)
         return (
           <>
             <div className="container">
@@ -43,8 +58,10 @@ const CommentLayout: React.FC<CommentLayoutProps> = ({ data }) => {
                 />
                 <Comment comment={item.content} />
               </div>
-              <VoteForComment />
+              <VoteForComment votes={item.score} />
             </div>
+            {/* add condition to render this to relevant comment reply using reply to and name */}
+            <Replies replies={item.replies}></Replies>
           </>
         );
       })}

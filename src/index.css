@@ -145,12 +145,13 @@ body {
 .author-img {
   grid-area: b;
 }
+
 .reply-btn {
   grid-area: c;
   justify-self: end;
 }
 
-#comment {
+.comment {
   text-align: left;
   color: var(--clr-neutral-400);
 }
