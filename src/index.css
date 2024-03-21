@@ -228,3 +228,11 @@ textarea {
   font-weight: var(--fw-regular);
   border-color: var(--clr-neutral-300);
 }
+
+.tag {
+  background-color: var(--clr-primary-400);
+  color: var(--clr-neutral-100);
+  border-radius: 0.2rem;
+  padding: 0.125rem 0.375rem;
+  font-size: 12px;
+}

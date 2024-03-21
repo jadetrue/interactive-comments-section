@@ -4,12 +4,14 @@ interface ButtonProps {
   name: string;
   onClick: () => {};
   type?: "danger" | "success" | "neutral" | "default";
+  icon?: boolean;
 }
 
 export const Button: React.FC<ButtonProps> = ({
   name,
   onClick,
   type = "default",
+  icon
 }) => {
   const buttonState = (type) => {
     switch (type) {
@@ -29,8 +31,11 @@ export const Button: React.FC<ButtonProps> = ({
   };
 
   return (
-    <button className={`btn ${buttonState(type)} btn__reset`} onClick={onClick}>
-      {name}
-    </button>
+    <>
+      {icon && <></>}
+      <button className={`btn ${buttonState(type)} btn__reset`} onClick={onClick}>
+        {name}
+      </button>
+    </>
   );
 };

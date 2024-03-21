@@ -32,12 +32,16 @@ interface CommentLayoutProps {
         ]
       }],
     currentUser: {
-      image: { png: string };
-    };
+      image: { png: string; webp: string };
+      username: string;
+    },
   };
-}
+};
+
 
 const CommentLayout: React.FC<CommentLayoutProps> = ({ data }) => {
+
+  const currentUser = data.currentUser.username
 
   if (data.comments.length < 0) {
     return <p>no comments</p>;
@@ -46,7 +50,6 @@ const CommentLayout: React.FC<CommentLayoutProps> = ({ data }) => {
   return (
     <>
       {data.comments.map((item) => {
-        console.log(item)
         return (
           <>
             <div className="container">
@@ -55,6 +58,7 @@ const CommentLayout: React.FC<CommentLayoutProps> = ({ data }) => {
                   authorImg={item.user.image.png}
                   authorName={item.user.username}
                   dateTime={item.createdAt}
+                  isCurrentUser={item.user.username === currentUser}
                 />
                 <Comment comment={item.content} />
               </div>
@@ -62,7 +66,7 @@ const CommentLayout: React.FC<CommentLayoutProps> = ({ data }) => {
             </div>
             {/* add condition to render this to relevant comment reply using reply to and name */}
             <div className="reply-container">
-              <Replies replies={item.replies}></Replies>
+              <Replies replies={item.replies} isCurrentUser={true}></Replies>
             </div>
           </>
         );
