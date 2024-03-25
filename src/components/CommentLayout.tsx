@@ -40,7 +40,6 @@ interface CommentLayoutProps {
 
 
 const CommentLayout: React.FC<CommentLayoutProps> = ({ data }) => {
-
   const currentUser = data.currentUser.username
 
   if (data.comments.length < 0) {
@@ -66,7 +65,7 @@ const CommentLayout: React.FC<CommentLayoutProps> = ({ data }) => {
             </div>
             {/* add condition to render this to relevant comment reply using reply to and name */}
             <div className="reply-container">
-              <Replies replies={item.replies} isCurrentUser={currentUser}></Replies>
+              <Replies replies={item.replies} currentUser={currentUser}></Replies>
             </div>
           </>
         );
