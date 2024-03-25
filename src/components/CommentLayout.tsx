@@ -66,7 +66,7 @@ const CommentLayout: React.FC<CommentLayoutProps> = ({ data }) => {
             </div>
             {/* add condition to render this to relevant comment reply using reply to and name */}
             <div className="reply-container">
-              <Replies replies={item.replies} isCurrentUser={true}></Replies>
+              <Replies replies={item.replies} isCurrentUser={currentUser}></Replies>
             </div>
           </>
         );

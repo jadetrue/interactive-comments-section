@@ -19,13 +19,14 @@ interface RepliesProps {
       };
     }
   ];
-  isCurrentUser: boolean;
+  isCurrentUser: string;
 }
 
 export const Replies: React.FC<RepliesProps> = ({ replies, isCurrentUser }) => {
   return (
     <>
       {replies.map((reply) => {
+        console.log(isCurrentUser)
         return (
           <div className="border">
             <div className="container" key={reply.id}>
@@ -34,7 +35,7 @@ export const Replies: React.FC<RepliesProps> = ({ replies, isCurrentUser }) => {
                   authorImg={reply.user.image.png}
                   authorName={reply.user.username}
                   dateTime={reply.createdAt}
-                  isCurrentUser={isCurrentUser}
+                  isCurrentUser={reply.user.username === isCurrentUser}
                 />
                 <p>{reply.content}</p>
               </div>

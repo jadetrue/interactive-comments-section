@@ -5,9 +5,9 @@ import data from "./assets/data";
 function App() {
   console.log(data);
   return (
-    <>
+    <div className="layout">
       <CommentLayout key="" data={data} />
-    </>
+    </div>
   );
 }
 
