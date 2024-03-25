@@ -166,6 +166,7 @@ body {
 .comment {
   text-align: left;
   color: var(--clr-neutral-400);
+  margin-top: 1rem;
 }
 
 /* Button styles */
@@ -175,6 +176,9 @@ body {
   font-weight: var(--fw-medium);
   text-align: center;
   border-radius: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
 }
 
 .btn__reset {
@@ -183,12 +187,15 @@ body {
   cursor: pointer;
 }
 
-.btn--state-success,
-.btn--state-default {
+.btn--state-success {
   background: var(--clr-primary-400);
   color: var(--clr-neutral-100);
   text-transform: uppercase;
   padding: 0.75em 1.5em;
+}
+
+.btn--state-default {
+  color: var(--clr-primary-400);
 }
 
 .btn--state-neutral {
@@ -209,7 +216,6 @@ body {
   display: flex;
   justify-content: start;
   gap: 1em;
-  margin-bottom: 1em;
   align-items: center;
 }
 
@@ -245,4 +251,15 @@ textarea {
 .author-name {
   display: flex;
   gap: 0.5rem;
+}
+
+.author-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.button-container {
+  display: flex;
 }

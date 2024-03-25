@@ -1,6 +1,10 @@
 import React from "react";
 
-const Comment = ({ comment }) => {
+interface CommentProps {
+  comment: string;
+}
+
+const Comment: React.FC<CommentProps> = ({ comment }) => {
 
   return (<>
     <div className="comment">

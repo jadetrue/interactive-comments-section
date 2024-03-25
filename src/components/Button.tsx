@@ -1,10 +1,12 @@
 import React from "react";
-
+import DeleteIcon from "../assets/images/icon-delete.svg?react"
+import EditIcon from "../assets/images/icon-edit.svg?react"
+import ReplyIcon from "../assets/images/icon-reply.svg?react"
 interface ButtonProps {
   name: string;
   onClick: () => {};
   type?: "danger" | "success" | "neutral" | "default";
-  icon?: boolean;
+  icon?: "edit" | "reply" | "delete";
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -13,7 +15,7 @@ export const Button: React.FC<ButtonProps> = ({
   type = "default",
   icon
 }) => {
-  const buttonState = (type) => {
+  const buttonState = (type: string) => {
     switch (type) {
       case "danger": {
         return "btn--state-danger";
@@ -30,12 +32,27 @@ export const Button: React.FC<ButtonProps> = ({
     }
   };
 
+  const iconType = (type: string) => {
+    switch (type) {
+      case "edit": {
+        return <EditIcon />
+      }
+      case "reply": {
+        return <ReplyIcon />
+      }
+      case "delete": {
+        return <DeleteIcon />
+      }
+      default: {
+        return
+      }
+    }
+  }
+
   return (
-    <>
-      {icon && <></>}
-      <button className={`btn ${buttonState(type)} btn__reset`} onClick={onClick}>
-        {name}
-      </button>
-    </>
+    <button className={`btn ${buttonState(type)} btn__reset`} onClick={onClick}>
+      {icon && iconType(icon)}
+      {name}
+    </button>
   );
 };

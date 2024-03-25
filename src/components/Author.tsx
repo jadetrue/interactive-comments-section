@@ -4,7 +4,7 @@ interface AuthorProps {
   authorName?: string;
   authorImg: string;
   dateTime?: string;
-  isCurrentUser: boolean;
+  isCurrentUser?: boolean;
 }
 
 export const Author: React.FC<AuthorProps> = ({ authorName, authorImg, dateTime, isCurrentUser }) => {
