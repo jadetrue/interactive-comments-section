@@ -120,6 +120,7 @@ body {
   border-radius: 0.5rem;
   padding: 1rem;
   margin-bottom: 1rem;
+  min-width: fit-content;
 
   @media screen and (min-width: 1021px) {
     flex-direction: row-reverse;
@@ -216,10 +217,18 @@ body {
 /* End of Button styles */
 
 .author-container {
-  display: flex;
+  display: grid;
+  flex-direction: column;
   justify-content: start;
-  gap: 1em;
-  align-items: center;
+  align-items: start;
+
+  @media screen and (min-width: 376px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    gap: 1em;
+    align-items: center;
+  }
 }
 
 .text-clr-neutral {
@@ -258,11 +267,23 @@ textarea {
 
 .author-button {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
 
 .button-container {
   display: flex;
+  flex-direction: row;
+  justify-content: end;
+
+  @media screen and (min-width: 1021px) {
+    display: flex;
+    flex-direction: row;
+  }
 }
