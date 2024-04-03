@@ -185,6 +185,12 @@ body {
   align-items: center;
 }
 
+.btn:hover,
+.btn:active,
+.btn:focus {
+  opacity: 0.3;
+}
+
 .btn__reset {
   background: transparent;
   border: none;
@@ -250,6 +256,16 @@ textarea {
   color: var(--clr-neutral-400);
   font-weight: var(--fw-regular);
   border-color: var(--clr-neutral-300);
+
+  &:active {
+    outline-color: var(--clr-neutral-800);
+  }
+  &:focus-visible {
+    outline-color: var(--clr-neutral-800);
+  }
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .tag {
