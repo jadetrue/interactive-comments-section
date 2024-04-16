@@ -2,23 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --clr-primary-400: hsl(238, 40%, 52%);
-  --clr-primary-200: hsl(239, 57%, 85%);
-  --clr-secondary-500: hsl(358, 79%, 66%);
-  --clr-secondary-200: hsl(357, 100%, 86%);
+@layer base {
+  :root {
+    --clr-primary-400: 238deg 40% 52%;
+    --clr-primary-200: hsl(239, 57%, 85%);
+    
+    --clr-secondary-500: hsl(358, 79%, 66%);
+    --clr-secondary-200: hsl(357, 100%, 86%);
 
-  --clr-neutral-800: hsl(212, 24%, 26%);
-  --clr-neutral-400: hsl(211, 10%, 45%);
-  --clr-neutral-300: hsl(223, 19%, 93%);
-  --clr-neutral-200: hsl(228, 33%, 97%);
-  --clr-neutral-100: hsl(0, 0%, 100%);
+    --clr-neutral-800: hsl(212, 24%, 26%);
+    --clr-neutral-400: hsl(211, 10%, 45%);
+    --clr-neutral-300: hsl(223, 19%, 93%);
+    --clr-neutral-200: hsl(228, 33%, 97%);
+    --clr-neutral-100: hsl(0, 0%, 100%);
 
-  --ff-primary: "Rubik", sans-serif;
+    --ff-primary: "Rubik", sans-serif;
 
-  --fw-regular: 400;
-  --fw-medium: 500;
-  --fw-bold: 700;
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-bold: 700;
+  }
 }
 
 #root {
@@ -27,7 +30,6 @@
   padding: 2rem;
   text-align: center;
 }
-
 
 /* CSS Reset from Josh Comeau https://www.joshwcomeau.com/css/custom-css-reset/ */
 

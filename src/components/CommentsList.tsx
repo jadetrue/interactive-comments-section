@@ -21,25 +21,23 @@ export const CommentsList: React.FC<Data> = ({ comments }) => {
             </Comment>
             <>
               {comment.replies.length > 0 ? (
-                <>
+                <div className="ml-32">
                   {comment.replies.map((reply, i) => {
                     return (
-                      <div className="ml-6">
-                        <Comment
-                          user={reply.user}
-                          createdAt={reply.createdAt}
-                          score={reply.score}
-                          isCurrentUser={currentUser === reply.user.username}
-                          key={i}
-                        >
-                          {reply.content}
-                        </Comment>
-                      </div>
+                      <Comment
+                        user={reply.user}
+                        createdAt={reply.createdAt}
+                        score={reply.score}
+                        isCurrentUser={currentUser === reply.user.username}
+                        key={i}
+                      >
+                        {reply.content}
+                      </Comment>
                     );
                   })}
-                </>
+                </div>
               ) : (
-                <div className="flex p-4 bg-white rounded-lg mt-4">No replies</div>
+                <div className="flex p-4 bg-white rounded-lg mt-4 ml-32">No replies</div>
               )}
             </>
           </div>
