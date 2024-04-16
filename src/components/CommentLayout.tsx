@@ -1,5 +1,5 @@
-import React from "react";
-import VoteForComment from "./VoteForComment";
+import React, { useState } from "react";
+import VoteForComment from "./Score";
 import { Author } from "./Author";
 import Comment from "./Comment";
 import { AddNewComment } from "./AddNewComment";
@@ -42,11 +42,24 @@ interface CommentLayoutProps {
   };
 }
 
+interface Comment {
+  id: number,
+  text: string,
+  editable: boolean
+}
+
 const CommentLayout: React.FC<CommentLayoutProps> = ({ data }) => {
+  const [comment, setComment] = useState<Comment>()
   const currentUser = data.currentUser.username;
 
   if (data.comments.length < 0) {
     return <p>no comments</p>;
+  }
+
+  const handleClick = (text: string) => {
+
+    const newComment = { id: Date.now(), text, editable: false } // todo, change editable to check user
+    setComment(newComment)
   }
 
   return (
@@ -81,8 +94,8 @@ const CommentLayout: React.FC<CommentLayoutProps> = ({ data }) => {
       })}
       <AddNewComment
         userImg={data.currentUser.image.png}
-        comment={""}
-        onClick={() => alert("hello")}
+        comment={comment}
+        onClick={handleClick}
       />
     </>
   );

@@ -4,7 +4,7 @@ import EditIcon from "../assets/images/icon-edit.svg?react"
 import ReplyIcon from "../assets/images/icon-reply.svg?react"
 interface ButtonProps {
   name: string;
-  onClick: () => {};
+  onClick: () => void;
   type?: "danger" | "success" | "neutral" | "default";
   icon?: "edit" | "reply" | "delete";
 }

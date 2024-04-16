@@ -1,5 +1,6 @@
-import React from "react";
+import React, {useState} from "react";
 import { Button } from "./Button";
+import { AddNewComment } from "./AddNewComment";
 
 interface CommentButtonProps {
   reply: {
@@ -12,13 +13,15 @@ const CommentButtons: React.FC<CommentButtonProps> = ({
   reply,
   currentUser,
 }) => {
+const [response, setResponse] = useState<boolean>(false)
+
   return (
     <div className="button-container">
       {reply.user.username != currentUser && (
         <Button
           name="Reply"
           type="default"
-          onClick={() => alert("reply")}
+          onClick={() => setResponse(true)}
           icon="reply"
         />
       )}

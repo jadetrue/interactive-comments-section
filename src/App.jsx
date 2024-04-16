@@ -1,12 +1,11 @@
-import "./App.css";
-import CommentLayout from "./components/CommentLayout";
+import "./index.css";
+import CommentList from "./components/CommentsList";
 import data from "./assets/data";
 
 function App() {
-  console.log(data);
   return (
-    <div className="layout">
-      <CommentLayout key="" data={data} />
+    <div className="m-auto md:w-3/4">
+      <CommentList comments={data.comments} />
     </div>
   );
 }

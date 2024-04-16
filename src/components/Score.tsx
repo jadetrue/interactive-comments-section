@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Button } from "./Button";
 
-interface VoteForCommentProps {
-  votes: number;
+interface Score {
+  score: number;
 }
 
-const VoteForComment: React.FC<VoteForCommentProps> = ({ votes }) => {
-  const [count, setCount] = useState(votes);
+const Score: React.FC<Score> = ({score}) => {
+  const [count, setCount] = useState(score);
 
   const increase = () => {
     setCount((count) => count + 1);
@@ -25,4 +25,4 @@ const VoteForComment: React.FC<VoteForCommentProps> = ({ votes }) => {
   );
 };
 
-export default VoteForComment;
+export default Score;

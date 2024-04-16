@@ -1,6 +1,6 @@
 import React from "react";
 import { Author } from "./Author";
-import VoteForComment from "./VoteForComment";
+import VoteForComment from "./Score";
 import CommentButtons from "./CommentButtons";
 import Comment from "./Comment";
 

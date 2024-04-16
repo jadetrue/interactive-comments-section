@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --clr-primary-400: hsl(238, 40%, 52%);
   --clr-primary-200: hsl(239, 57%, 85%);
@@ -16,6 +20,14 @@
   --fw-medium: 500;
   --fw-bold: 700;
 }
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
 
 /* CSS Reset from Josh Comeau https://www.joshwcomeau.com/css/custom-css-reset/ */
 
@@ -85,14 +97,6 @@ h6 {
 body {
   font-family: var(--ff-primary);
   background-color: var(--clr-neutral-200);
-}
-
-.layout {
-  margin: 0 auto;
-
-  @media screen and (min-width: 1021px) {
-    width: 70%;
-  }
 }
 
 .clr__primary {
@@ -302,4 +306,10 @@ textarea {
     display: flex;
     flex-direction: row;
   }
+}
+
+form {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
 }

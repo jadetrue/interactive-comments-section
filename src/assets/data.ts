@@ -1,4 +1,6 @@
-const data = {
+import { Data } from "../types";
+
+const data: Data = {
   currentUser: {
     image: {
       png: "./src/assets/images/avatars/image-juliusomo.png",
