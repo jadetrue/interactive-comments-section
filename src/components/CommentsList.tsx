@@ -37,7 +37,7 @@ export const CommentsList: React.FC<Data> = ({ comments }) => {
                   })}
                 </div>
               ) : (
-                <div className="flex p-4 bg-white rounded-lg mt-4 ml-32">No replies</div>
+                <div className="flex p-4 bg-light-100 rounded-lg mt-4 ml-32">No replies</div>
               )}
             </>
           </div>
