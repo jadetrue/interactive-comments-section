@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Author } from "./Author";
 import { Button } from "./Button";
 
 interface AddNewCommentProps {
@@ -21,7 +20,6 @@ export const AddNewComment: React.FC<AddNewCommentProps> = ({ userImg, comment, 
   return (
 
     <div className="new-comment-container">
-      <Author authorImg={userImg} />
       <form onSubmit={handleSubmit}>
         <textarea className="new-comment" placeholder={placeholder} value={text} onChange={(e) => setText(e.target.value)}>{comment}</textarea>
         <div className="reply-btn">

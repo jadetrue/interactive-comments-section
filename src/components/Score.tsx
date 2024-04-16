@@ -5,7 +5,7 @@ interface Score {
   score: number;
 }
 
-const Score: React.FC<Score> = ({score}) => {
+const Score: React.FC<Score> = ({ score }) => {
   const [count, setCount] = useState(score);
 
   const increase = () => {
@@ -13,7 +13,7 @@ const Score: React.FC<Score> = ({score}) => {
   };
 
   const decrease = () => {
-    if (count > 0) setCount((count) => count - 1);
+    if (count > 0) setCount((count) => Math.max(score, count - 1));
   };
 
   return (
