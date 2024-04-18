@@ -27,7 +27,7 @@ export const Button: React.FC<ButtonProps> = ({
         return "bg-primary-200 hover:bg-primary-400";
       }
       default: {
-        return "bg-primary-400 text-primary-400 opacity-25";
+        return "bg-primary-400 text-primary-400 opacity-40";
       }
     }
   };

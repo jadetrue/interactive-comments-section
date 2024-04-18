@@ -21,7 +21,7 @@ export const CommentsList: React.FC<Data> = ({ comments }) => {
             </Comment>
             <>
               {comment.replies.length > 0 ? (
-                <div className="ml-24">
+                <div className="transform duration-300 ml-8 sm:ml-14 md:ml-24">
                   {comment.replies.map((reply, i) => {
                     return (
                       <Comment
@@ -37,7 +37,7 @@ export const CommentsList: React.FC<Data> = ({ comments }) => {
                   })}
                 </div>
               ) : (
-                <div className="flex p-4 bg-light-100 rounded-lg mt-4 ml-24">No replies</div>
+                <div className="transform duration-300 flex p-4 bg-light-100 rounded-lg mt-4 ml-14 md:ml-24">No replies</div>
               )}
             </>
           </div>
