@@ -105,19 +105,6 @@
   color: var(--clr-primary-400);
 }
 
-.vote-for-comment {
-  width: fit-content;
-  background-color: var(--clr-light-200);
-  border-radius: 0.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  @media screen and (min-width: 1021px) {
-    flex-direction: column;
-  }
-}
-
 .container {
   display: flex;
   gap: 1rem;
