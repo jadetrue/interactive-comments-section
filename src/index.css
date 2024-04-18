@@ -5,16 +5,16 @@
 @layer base {
   :root {
     --clr-primary-400: 238deg 40% 52%;
-    --clr-primary-200: 239deg, 57%, 85%;
+    --clr-primary-200: 239deg 57% 85%;
 
-    --clr-secondary-500: 358deg, 79%, 66%;
-    --clr-secondary-200: 357deg, 100%, 86%;
+    --clr-secondary-500: 358deg 79% 66%;
+    --clr-secondary-200: 357deg 100% 86%;
 
-    --clr-light-800: 212deg, 24%, 26%;
-    --clr-light-400: 211deg, 10%, 45%;
-    --clr-light-300: 223deg, 19%, 93%;
-    --clr-light-200: 228deg, 33%, 97%;
-    --clr-light-100: 0deg, 0%, 100%;
+    --clr-light-800: 212deg 24% 26%;
+    --clr-light-400: 211deg 10% 45%;
+    --clr-light-300: 223deg 19% 93%;
+    --clr-light-200: 228deg 33% 97%;
+    --clr-light-100: 0deg 0% 100%;
 
     --ff-primary: "Rubik", sans-serif;
 

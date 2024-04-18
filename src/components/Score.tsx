@@ -17,10 +17,10 @@ const Score: React.FC<Score> = ({ score }) => {
   };
 
   return (
-    <div className="flex md:flex-col justify-center w-fit rounded-sm bg-light-800">
-      <Button name="+" type="neutral" onClick={async () => increase()} />
-      <p className="text-primary-400 text-medium">{count}</p>
-      <Button name="-" type="neutral" onClick={async () => decrease()} />
+    <div className="flex md:flex-col items-center w-fit rounded-lg bg-light-200 font-medium">
+      <Button name="+" onClick={async () => increase()} />
+      <p className="text-primary-400 font-medium">{count}</p>
+      <Button name="-" onClick={async () => decrease()} />
     </div>
   );
 };

@@ -27,7 +27,7 @@ export const Button: React.FC<ButtonProps> = ({
         return "bg-primary-200 hover:bg-primary-400";
       }
       default: {
-        return "bg-primary-400";
+        return "bg-primary-400 text-primary-400 opacity-25";
       }
     }
   };
@@ -50,7 +50,7 @@ export const Button: React.FC<ButtonProps> = ({
   }
 
   return (
-    <button className={`py-2 px-4 flex gap-2 items-center font-medium text-center rounded-lg ${buttonState(type)} bg-transparent border-none cursor-pointer hover:opacity-0.25`} onClick={onClick}>
+    <button className={`py-2 px-4 flex gap-2 items-center font-medium text-center rounded-lg ${buttonState(type)} bg-transparent border-none cursor-pointer hover:opacity-100`} onClick={onClick}>
       {icon && iconType(icon)}
       {name}
     </button>
