@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ButtonHTMLAttributes, Children } from "react";
 import { ReactComponent as Edit } from "../assets/images/icon-edit.svg"
 import { ReactComponent as Reply } from "../assets/images/icon-reply.svg"
 import { ReactComponent as Delete } from "../assets/images/icon-delete.svg"
@@ -14,7 +14,7 @@ export const Button: React.FC<ButtonProps> = ({
   name,
   onClick,
   type = "default",
-  icon
+  icon,
 }) => {
   const buttonState = (type: string) => {
     switch (type) {
@@ -51,9 +51,9 @@ export const Button: React.FC<ButtonProps> = ({
   }
 
   return (
-    <div className="flex flex-row items-center hover:opacity-40 h-fit self-center rounded-lg">
+    <div className="flex flex-row items-center hover:opacity-40 h-fit rounded-lg">
       {icon && iconType(icon)}
-      <button className={`py-2 px-4 h-fit flex gap-2 self-center items-center font-medium text-center rounded-lg ${buttonState(type)} border-none cursor-pointer hover:opacity-100`} onClick={onClick}>
+      <button className={`py-2 px-4 h-fit flex gap-2 font-medium text-center rounded-lg ${buttonState(type)} border-none cursor-pointer hover:opacity-100`} onClick={onClick}>
         {name}
       </button>
     </div>

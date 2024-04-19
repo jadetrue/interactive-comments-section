@@ -24,7 +24,7 @@ const Comment: React.FC<CommentProps> = ({
             <div className="flex flex-col-reverse md:flex-row gap-4">
                 <div className="flex flex-row justify-between">
                     <Score score={score} />
-                    <div className="md:hidden gap-2">
+                    <div className="md:hidden gap-2 self-center">
                         <ActionButtons isCurrentUser={isCurrentUser} />
                     </div>
                 </div>
@@ -36,7 +36,7 @@ const Comment: React.FC<CommentProps> = ({
                             {isCurrentUser && <div className="px-1.5 py-0.5 bg-primary-400 text-xs text-light-100 rounded-sm">you</div>}
                             <p className="text-light-400">{createdAt}</p>
                         </div>
-                        <div className="hidden md:flex flex-row gap-2">
+                        <div className="hidden md:flex flex-row gap-2 self-center">
                             <ActionButtons isCurrentUser={isCurrentUser} />
                         </div>
                     </div>
