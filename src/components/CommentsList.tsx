@@ -1,14 +1,14 @@
 import React from "react";
-import { Data } from "../types";
+import { RootComment, Data } from "../types";
 import Comment from "./Comment";
 import { Button } from "./Button";
 
-export const CommentsList: React.FC<Data> = ({ comments }) => {
+export const CommentsList: React.FC<Data> = ({ comments, currentUser }) => {
+  const currentUsername = currentUser.username
 
   return (
     <>
       {comments.map((comment, i) => {
-        const currentUser = comment.user.username;
         return (
           <div key={Math.random()}>
             <Comment
@@ -16,7 +16,7 @@ export const CommentsList: React.FC<Data> = ({ comments }) => {
               user={comment.user}
               createdAt={comment.createdAt}
               score={comment.score}
-              isCurrentUser={currentUser !== comment.user.username}
+              isCurrentUser={currentUsername === comment.user.username}
             >
               {comment.content}
             </Comment>
@@ -30,7 +30,7 @@ export const CommentsList: React.FC<Data> = ({ comments }) => {
                         user={reply.user}
                         createdAt={reply.createdAt}
                         score={reply.score}
-                        isCurrentUser={currentUser === reply.user.username}
+                        isCurrentUser={currentUsername === reply.user.username}
 
                       >
                         {reply.content}

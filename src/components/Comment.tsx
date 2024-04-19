@@ -2,6 +2,7 @@ import React from "react";
 import { User } from "../types";
 import Score from "./Score";
 import { Button } from "./Button";
+import ActionButtons from "./ActionButtons";
 
 interface CommentProps {
     children: React.ReactNode;
@@ -23,10 +24,8 @@ const Comment: React.FC<CommentProps> = ({
             <div className="flex flex-col-reverse md:flex-row gap-4">
                 <div className="flex flex-row justify-between">
                     <Score score={score} />
-                    <div className="md:hidden">
-                        {isCurrentUser && <Button name="Delete" type="danger" onClick={() => console.log("delete")} icon="delete" />}
-                        {!isCurrentUser && <Button name="Reply" type="neutral" onClick={() => console.log("reply")} icon="reply" />}
-                        {isCurrentUser && <Button name="Edit" type="neutral" onClick={() => console.log("edit")} icon="edit" />}
+                    <div className="md:hidden gap-2">
+                        <ActionButtons isCurrentUser={isCurrentUser} />
                     </div>
                 </div>
                 <div className="flex flex-col gap-4">
@@ -37,10 +36,8 @@ const Comment: React.FC<CommentProps> = ({
                             {isCurrentUser && <div className="px-1.5 py-0.5 bg-primary-400 text-xs text-light-100 rounded-sm">you</div>}
                             <p className="text-light-400">{createdAt}</p>
                         </div>
-                        <div className="hidden md:flex flex-row">
-                            {isCurrentUser && <Button name="Delete" type="danger" onClick={() => console.log("delete")} icon="delete" />}
-                            {!isCurrentUser && <Button name="Reply" type="neutral" onClick={() => console.log("reply")} icon="reply" />}
-                            {isCurrentUser && <Button name="Edit" type="neutral" onClick={() => console.log("edit")} icon="edit" />}
+                        <div className="hidden md:flex flex-row gap-2">
+                            <ActionButtons isCurrentUser={isCurrentUser} />
                         </div>
                     </div>
                     <p className="text-light-400">{children}</p>
