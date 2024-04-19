@@ -39,7 +39,7 @@ export const CommentsList: React.FC<Data> = ({ comments, currentUser }) => {
                   })}
                 </div>
               ) : (
-                <div className="transform duration-300 flex p-4 bg-light-100 rounded-lg mt-4 ml-14 md:ml-24"><Button name="Add a reply" icon="reply" onClick={() => console.log("add a reply")} /></div>
+                <div className="transform duration-300 flex p-4 bg-light-100 rounded-lg mt-4 ml-14 md:ml-24"><Button name="Add a reply" icon="reply" type="neutral" onClick={() => console.log("add a reply")} /></div>
               )}
             </>
           </div>
