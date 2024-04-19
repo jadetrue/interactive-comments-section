@@ -1,7 +1,8 @@
 import React from "react";
-import DeleteIcon from "../assets/images/icon-delete.svg?react"
-import EditIcon from "../assets/images/icon-edit.svg?react"
-import ReplyIcon from "../assets/images/icon-reply.svg?react"
+import { ReactComponent as Edit } from "../assets/images/icon-edit.svg"
+import { ReactComponent as Reply } from "../assets/images/icon-reply.svg"
+import { ReactComponent as Delete } from "../assets/images/icon-delete.svg"
+
 interface ButtonProps {
   name: string;
   onClick: () => void;
@@ -18,13 +19,13 @@ export const Button: React.FC<ButtonProps> = ({
   const buttonState = (type: string) => {
     switch (type) {
       case "danger": {
-        return "bg-secondary-500";
+        return "text-secondary-500";
       }
       case "success": {
         return "bg-primary-400 uppercase";
       }
       case "neutral": {
-        return "bg-primary-200 hover:bg-primary-400";
+        return "text-primary-400";
       }
       default: {
         return "bg-primary-400 text-primary-400 opacity-40";
@@ -35,13 +36,13 @@ export const Button: React.FC<ButtonProps> = ({
   const iconType = (type: string) => {
     switch (type) {
       case "edit": {
-        return <EditIcon />
+        return <Edit />
       }
       case "reply": {
-        return <ReplyIcon />
+        return <Reply />
       }
       case "delete": {
-        return <DeleteIcon />
+        return <Delete />
       }
       default: {
         return
@@ -50,9 +51,11 @@ export const Button: React.FC<ButtonProps> = ({
   }
 
   return (
-    <button className={`py-2 px-4 flex gap-2 items-center font-medium text-center rounded-lg ${buttonState(type)} bg-transparent border-none cursor-pointer hover:opacity-100`} onClick={onClick}>
+    <div className="flex flex-row items-center hover:opacity-40 h-fit self-center rounded-lg">
       {icon && iconType(icon)}
-      {name}
-    </button>
+      <button className={`py-2 px-4 h-fit flex gap-2 self-center items-center font-medium text-center rounded-lg ${buttonState(type)} bg-transparent border-none cursor-pointer hover:opacity-100`} onClick={onClick}>
+        {name}
+      </button>
+    </div>
   );
 };

@@ -9,7 +9,7 @@ export const CommentsList: React.FC<Data> = ({ comments }) => {
       {comments.map((comment, i) => {
         const currentUser = comment.user.username;
         return (
-          <div>
+          <div key={Math.random()}>
             <Comment
               key={i}
               user={comment.user}
@@ -25,11 +25,12 @@ export const CommentsList: React.FC<Data> = ({ comments }) => {
                   {comment.replies.map((reply, i) => {
                     return (
                       <Comment
+                        key={i}
                         user={reply.user}
                         createdAt={reply.createdAt}
                         score={reply.score}
                         isCurrentUser={currentUser === reply.user.username}
-                        key={i}
+
                       >
                         {reply.content}
                       </Comment>
