@@ -1,21 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "./Button";
+import Modal from "./Modal";
 
 interface ActionButtonProps {
     isCurrentUser: boolean;
 }
 
 const ActionButtons: React.FC<ActionButtonProps> = ({ isCurrentUser }) => {
+    const [openModal, setOpenModal] = useState<boolean>(false);
+
     return (
         <>
             {isCurrentUser && (
                 <Button
                     name="Delete"
                     type="danger"
-                    onClick={() => console.log("delete")}
+                    onClick={() => setOpenModal(true)}
                     icon="delete"
                 />
             )}
+            <Modal isOpen={openModal} onClose={() => setOpenModal(false)} />
             {!isCurrentUser && (
                 <Button
                     name="Reply"

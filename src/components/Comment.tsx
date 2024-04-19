@@ -1,7 +1,6 @@
 import React from "react";
 import { User } from "../types";
 import Score from "./Score";
-import { Button } from "./Button";
 import ActionButtons from "./ActionButtons";
 
 interface CommentProps {

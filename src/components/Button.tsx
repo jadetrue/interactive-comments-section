@@ -6,7 +6,7 @@ import { ReactComponent as Delete } from "../assets/images/icon-delete.svg"
 interface ButtonProps {
   name: string;
   onClick: () => void;
-  type?: "danger" | "success" | "neutral" | "default" | "primary" | "cancel";
+  type?: "danger" | "success" | "neutral" | "default" | "exit" | "confirm";
   icon?: "edit" | "reply" | "delete";
 }
 
@@ -27,10 +27,10 @@ export const Button: React.FC<ButtonProps> = ({
       case "neutral": {
         return "text-primary-400";
       }
-      case "primary": {
+      case "exit": {
         return "bg-light-400 text-light-100 w-full uppercase"
       }
-      case "cancel": {
+      case "confirm": {
         return "bg-secondary-500 text-light-100 w-full uppercase"
       }
       default: {
@@ -57,7 +57,7 @@ export const Button: React.FC<ButtonProps> = ({
   }
 
   return (
-    <div className={`${type === "default" ? "opacity-40 hover:opacity-100" : "hover:opacity-40"} flex flex-row items-center h-fit rounded-lg`}>
+    <div className={`${type === "default" ? "opacity-40 hover:opacity-100" : "hover:opacity-40"} flex flex-row items-center h-fit rounded-lg z-auto`}>
       {icon && iconType(icon)}
       <button className={`${buttonState(type)} py-2 px-4 h-fit flex gap-2 font-medium text-center justify-center rounded-lg border-none cursor-pointer`} onClick={onClick}>
         {name}
