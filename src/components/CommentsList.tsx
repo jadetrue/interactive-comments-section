@@ -1,6 +1,7 @@
 import React from "react";
 import { Data } from "../types";
 import Comment from "./Comment";
+import { Button } from "./Button";
 
 export const CommentsList: React.FC<Data> = ({ comments }) => {
 
@@ -38,7 +39,7 @@ export const CommentsList: React.FC<Data> = ({ comments }) => {
                   })}
                 </div>
               ) : (
-                <div className="transform duration-300 flex p-4 bg-light-100 rounded-lg mt-4 ml-14 md:ml-24">No replies</div>
+                <div className="transform duration-300 flex p-4 bg-light-100 rounded-lg mt-4 ml-14 md:ml-24"><Button name="Add a reply" icon="reply" onClick={() => console.log("add a reply")} /></div>
               )}
             </>
           </div>

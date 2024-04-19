@@ -22,13 +22,13 @@ export const Button: React.FC<ButtonProps> = ({
         return "text-secondary-500";
       }
       case "success": {
-        return "bg-primary-400 uppercase";
+        return "bg-primary-400 text-light-100 uppercase";
       }
       case "neutral": {
         return "text-primary-400";
       }
       default: {
-        return "bg-primary-400 text-primary-400 opacity-40";
+        return "text-primary-400";
       }
     }
   };
@@ -53,7 +53,7 @@ export const Button: React.FC<ButtonProps> = ({
   return (
     <div className="flex flex-row items-center hover:opacity-40 h-fit self-center rounded-lg">
       {icon && iconType(icon)}
-      <button className={`py-2 px-4 h-fit flex gap-2 self-center items-center font-medium text-center rounded-lg ${buttonState(type)} bg-transparent border-none cursor-pointer hover:opacity-100`} onClick={onClick}>
+      <button className={`py-2 px-4 h-fit flex gap-2 self-center items-center font-medium text-center rounded-lg ${buttonState(type)} border-none cursor-pointer hover:opacity-100`} onClick={onClick}>
         {name}
       </button>
     </div>
